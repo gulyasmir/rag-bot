@@ -1,11 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import * as dotenv from 'dotenv';
 import { OpenaiService } from 'src/openai/openai.service';
 import { readFileSync } from 'fs';
+import * as dotenv from 'dotenv';
 const TelegramBot = require('node-telegram-bot-api');
-
 dotenv.config({ path: __dirname + '/.env' });
-
 const token = process.env.BOT_TOKEN;
 const quizeFile = process.env.QUIZE_FILE;
 const questionFileName = process.env.QUESTION_FILE;

@@ -1,7 +1,9 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { Pinecone } from '@pinecone-database/pinecone';
 import { readFileSync, writeFileSync } from 'fs';
+import * as dotenv from 'dotenv';
 
+dotenv.config({ path: __dirname + '/.env' });
 const questionFileName = process.env.QUESTION_FILE;
 const pineconeApiKey = process.env.PINECONE_API_KEY;
 const pineconeIndexName = process.env.INDEX_NAME;

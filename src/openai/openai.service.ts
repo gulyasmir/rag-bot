@@ -2,6 +2,9 @@ import { Injectable } from '@nestjs/common';
 import OpenAI from 'openai';
 import { PineconeService } from './pinecone.service';
 import { writeFileSync } from 'fs';
+import * as dotenv from 'dotenv';
+
+dotenv.config({ path: __dirname + '/.env' });
 const theme = process.env.THEME;
 const myApiKey = process.env.OPENAI_API_KEY;
 const quizeFile = process.env.QUIZE_FILE;
